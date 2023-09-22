@@ -6,8 +6,7 @@ import Link from "next/link";
 export default function Navbar() {
   return (
     <>
-      <div className="h-16 w-full flex justify-between items-center mt-4  ">
-        <h1 className="text-3xl ml-8 font-bold  ">Alison Diego</h1>
+      <div className="h-16 w-full flex justify-end items-center mt-4  ">
         <div className="p-2 flex gap-6 ">
           <Button asChild size="sm">
             <Link target="blank" href="https://github.com/alisondiegodev">
