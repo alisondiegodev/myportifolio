@@ -117,10 +117,13 @@ svg {
 .youtube {
   max-width: 640px;
   overflow: hidden;
-  border-radius: 30px;
+  border-radius: 10px;
   margin: 20px;
 }
 
 .rounded-lg {
   border-radius: 5px;
+}
+.border-radius {
+  border-radius: 10px !important;
 }

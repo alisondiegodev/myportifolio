@@ -3,9 +3,8 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import TopCorner from "@/components/top-corner";
 import BottomCorner from "@/components/bottom-corner";
-import Navbar from "@/components/navbar";
 import Sidebar from "@/components/sidebar";
-import { SeparatorHorizontal } from "lucide-react";
+import { ModalProvider } from "@/providers/modal-provider";
 
 const poppins = Poppins({
   weight: ["400", "700"],
@@ -31,6 +30,7 @@ export default function RootLayout({
           <div className="container">
             <TopCorner />
             <BottomCorner />
+            <ModalProvider />
 
             <div className="flex justify-between mt-4">
               {children}

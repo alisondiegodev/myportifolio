@@ -1,9 +1,14 @@
+"use client";
 import { Button } from "@/components/ui/button";
-import YoutubeModal from "@/components/youtube-modal";
+import { useStoreModal } from "@/hooks/use-store-modal";
 import { Play } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Home() {
+  const storeModal = useStoreModal();
+  const [open, setOpen] = useState(false);
+
   return (
     <>
       <div className="flex flex-col justify-start items-start">
@@ -32,13 +37,20 @@ export default function Home() {
             </p>
             <p className="leading-relaxed">
               Tenho facilidade em transitar entre linguagens e aprendizado
-              acelerado, O que me levou a ter conhecimento em diversas
+              acelerado, o que me levou a ter conhecimento em diversas
               ferramentas e tecnologias.
             </p>
           </div>
         </div>
         <div className="ml-4">
-          <Button className="font-semibold text-zinc-700" size="sm">
+          <Button
+            onClick={() => {
+              setOpen(false);
+              storeModal.onOpen();
+            }}
+            className="font-semibold text-zinc-700"
+            size="sm"
+          >
             <Play className="mr-2 h-4 w-4 " />
             Assistir Apresentação
           </Button>
