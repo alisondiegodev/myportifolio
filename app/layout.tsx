@@ -31,7 +31,6 @@ export default function RootLayout({
           <div className="container">
             <TopCorner />
             <BottomCorner />
-            <Navbar />
 
             <div className="flex justify-between mt-4">
               {children}

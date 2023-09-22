@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { Image as ImageIcon, Server, Store } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 
 export default function Sidebar() {
   const pathname = usePathname();
@@ -11,6 +12,24 @@ export default function Sidebar() {
   return (
     <>
       <aside>
+        <div className="p-2 flex justify-end items-start h-20 gap-6 ">
+          <Button asChild size="sm">
+            <Link target="blank" href="https://github.com/alisondiegodev">
+              <Github className=" h-4 w-4 mr-2" />
+              Github
+            </Link>
+          </Button>
+          <Button asChild className="flex items-center" size="sm">
+            <Link
+              target="blank"
+              href="https://www.linkedin.com/in/alison-diego-da-silva-868970246/"
+            >
+              <Linkedin className="h-4 w-4 mr-2 mb-1" />
+              LinkedIn
+            </Link>
+          </Button>
+        </div>
+
         <nav className="navbar">
           <Button variant="outline" size="lg" className="font-bold " asChild>
             <Link className={pathname == "/" ? "active" : ""} href="/">

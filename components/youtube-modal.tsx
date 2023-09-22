@@ -1,6 +1,6 @@
 import YouTubePlayer from "./youtube";
 
-export default function Content() {
+export default function YoutubeModal() {
   return (
     <>
       <div className="youtube">
