@@ -1,35 +1,29 @@
-"use client";
-import { Button } from "@/components/ui/button";
-import { useStoreModal } from "@/hooks/use-store-modal";
-import { Play } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
+import Icones from "@/components/icones";
 
 export default function Home() {
-  const storeModal = useStoreModal();
-  const [open, setOpen] = useState(false);
-
   return (
     <>
       <div className="flex flex-col justify-start items-start">
-        <div className="w-full flex items-start">
-          <div className="w-80 ">
+        <div className=" lg:flex-row flex-col w-full flex items-start">
+          <div className="lg:w-80 w-40 ">
             <Image
               className="ml-4 rounded-lg"
               src="/perfil.png"
               width={300}
               height={300}
               alt="fotoperfil"
+              priority
             />
           </div>
-          <div className="flex-1 p-4 space-y-4">
+          <div className="flex-1 p-4 -mt-2 space-y-4">
             <div>
               <h1 className="text-4xl font-bold">Alison Diego</h1>
-              <p className="text-muted-foreground italic text-sm">
+              <p className="text-muted-foreground italic text-sm mt-1">
                 Desenvolvedor Fullstack NextJS e Laravel
               </p>
             </div>
-            <h1 className="text-2xl">Sobre mim:</h1>
+            <h1 className="text-2xl sobre ">Sobre mim:</h1>
             <p className="leading-relaxed">
               Tenho 28 anos e sou apaixonado por o que faço, já trabalhei na
               criação de centenas de páginas web, no tempo livre gosto de criar
@@ -43,17 +37,7 @@ export default function Home() {
           </div>
         </div>
         <div className="ml-4">
-          <Button
-            onClick={() => {
-              setOpen(false);
-              storeModal.onOpen();
-            }}
-            className="font-semibold text-zinc-700"
-            size="sm"
-          >
-            <Play className="mr-2 h-4 w-4 " />
-            Assistir Apresentação
-          </Button>
+          <Icones />
         </div>
       </div>
     </>

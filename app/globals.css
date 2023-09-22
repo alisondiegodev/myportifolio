@@ -71,6 +71,9 @@
   }
 }
 
+body {
+  background: linear-gradient(359deg, #021c15, #00141a);
+}
 
 .container {
   width: 96vw;
@@ -94,8 +97,24 @@
 } 
 
 a.active {
-  background-color: hsl(var(--accent));
-  color: #ffffff;
+  background: linear-gradient(45deg, #073729, #012917);
+    color: #ffffff;
+  animation: hue 2s linear infinite;
+}
+@keyframes hue {
+
+  0% {
+      filter:  brightness(1);
+      
+      
+  }
+  50% {
+    filter:  brightness(1.2);
+}
+  100% {
+      filter:  brightness(1);
+
+  } 
 }
 
 .navbar {
@@ -127,3 +146,158 @@ svg {
 .border-radius {
   border-radius: 10px !important;
 }
+.playButton {
+  position: absolute;
+  right: 280px;
+  top: 45px;
+}
+
+html ,body {
+  overflow: hidden;
+  max-height: 100vh;
+}
+
+.burger-menu {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.burger-icon {
+  display: block;
+  width: 45px;
+  height: 2px;
+  background-color: #fff;
+  margin: 5px auto;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.burger-menu.open .burger-icon:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-menu.open .burger-icon:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.burger-menu.open .burger-icon:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+
+.btnMenu {
+  display: none;
+}
+@media (max-width: 1024px) { 
+  .btnMenu {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 12;
+
+  }
+  aside {
+      background: linear-gradient(359deg, #021c15, #00141a);
+      padding: 0px;
+      height: 100%;
+      padding-right: 45px;
+  }
+
+  .menu {
+    position: fixed;
+    top: 30px;
+    padding-top: 50px;
+    right: -100vw;
+    width: 88vw;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    transition: right 1s ease;
+  }
+  
+  .menu.visible {
+    right: 0px;
+  }
+.playButton {
+  top: 287px;
+  right: 20px;
+
+}
+.bottomSvg {
+  display: none;
+  bottom: 0px;
+  right: 0px;
+}
+}
+@media (max-width: 900px) {
+  .icons {
+    bottom: 20px;
+    position: fixed;
+    left: 5px;
+  }
+  .icons img {
+    width: 50px !important;
+  }
+
+  .container {
+    position: static;
+  }
+  body {
+    position: relative;
+    height: 100vh;
+  }
+
+  
+}
+
+@media (max-width: 700px) {
+  .notHome {
+    display: none;
+  }
+
+  .icons img {
+    width: 6vw !important;
+   }
+  .icons {
+    background-color: #021c15;
+    left: 50% !important;
+    right: 50% !important;
+    bottom: 50px;
+    transform: translate(-46%, -50%);
+    z-index: 10;
+  }
+ 
+
+}
+
+@media (max-width: 500px) {
+  aside {
+    padding-right: 0px;
+  }   .sobre {
+   margin-top: 60px !important;
+}
+.playButton {
+  right: 40px;
+  left: 40px;
+  top: 284px;
+} 
+
+.icons {
+  bottom: 12px;
+  transform: translate(-47%, -50%);
+}
+.icons img {
+  width: 5vw;
+}
+}
+
+@media (max-width: 370px) {
+
+.playButton {
+  top: 300px;
+} 
+}
+
+
